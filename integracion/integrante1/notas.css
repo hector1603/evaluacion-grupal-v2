@@ -54,6 +54,10 @@ form input:first-child {
     margin-top: 10px;
 }
 
+a {
+    text-decoration: none;
+}
+
 .tabla-estudiantes {
     margin: 40px 0 0 30px
 }
