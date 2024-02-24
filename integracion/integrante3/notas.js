@@ -27,6 +27,12 @@ calcular = function(){
 guardar = function(){
     let valueName = recuperarTexto("txtNombre");
     let valueName2 = recuperarTexto("txtApellido");
+    // Validar Apellido
+    if (valueName2.length < 3) {
+        mostrarTexto("lblError2",'El apellido debe tener al menos 3 caracteres');
+        //alert('El apellido debe tener al menos 3 caracteres');
+        return false;
+    }
     let valueNote = recuperarFloat("txtNota1");
     let valueNote2 = recuperarFloat("txtNota2");
     let valueNote3 = recuperarFloat("txtNota3");
@@ -80,4 +86,8 @@ limpiar = function(){
     mostrarTextoEnCaja("txtNota1","");
     mostrarTextoEnCaja("txtNota2","");
     mostrarTextoEnCaja("txtNota3","");
+    mostrarTexto("lblTotal",'-');
+    mostrarTexto("lblPromedio",'-');
+    //Errores
+    mostrarTexto("lblError2",'');
 }
