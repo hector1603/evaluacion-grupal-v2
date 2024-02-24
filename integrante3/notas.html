@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen</title>
+    <link rel="stylesheet" href="notas.css">
+    <script src="notas.js"></script>
+    <script src="../utilitarios.js"></script>
+</head>
+<body onload="mostrarEstudiantes();">
+    <div class="Final">
+        <img src="./img/mikasa.png" width="10%" class="final">
+    </div>
+    <div class="principal">
+        <div class="logoEscuela">
+            <img src="./img/logoKrakeDev.png" width="80%" />
+        </div>
+
+        <div class="contenido">
+            <div class="titulo">
+                Registro Estudiantes
+            </div>
+
+            <div class="ingresoDatos">
+                <div class="tituloCampo">
+                    Nombre
+                </div>
+                <div>
+                    <input type="text" class="cajaTexto" id="txtNombre"/>
+                    <div class="error" id="lblError1"></div>
+                </div>
+            </div>
+           
+            <div class="ingresoDatos">
+                <div class="tituloCampo">
+                    Apellido
+                </div>
+                <div>
+                    <input type="text" class="cajaTexto" id="txtApellido"/>
+                    <div class="error" id="lblError2"></div>
+                </div>
+            </div>
+            <div class="ingresoDatos">
+                <div class="tituloCampo">
+                    Nota 1
+                </div>
+                <div>
+                    <input type="text" class="cajaTexto" id="txtNota1"/>
+                    <div class="error" id="lblError2"></div>
+                </div>
+            </div>
+            <div class="ingresoDatos">
+                <div class="tituloCampo">
+                    Nota 2
+                </div>
+                <div>
+                    <input type="text" class="cajaTexto" id="txtNota2"/>
+                    <div class="error" id="lblError2"></div>
+                </div>
+            </div>
+            <div class="ingresoDatos">
+                <div class="tituloCampo">
+                    Nota 3
+                </div>
+                <div>
+                    <input type="text" class="cajaTexto" id="txtNota3"/>
+                    <div class="error" id="lblError2"></div>
+                </div>
+            </div>
+            <div class="botones">
+                <div class="contenedorBoton">
+                    <input type="button" value="CALCULAR"
+                     class="estiloBoton" onclick="calcular();" />
+                </div>
+                <div class="contenedorBoton">
+                    <input type="button" value="GUARDAR" id="btnGuardar"
+                     class="estiloBoton" onclick="guardar();" />
+                </div>
+             </div>
+        </div>
+        <h3>Total:<div class="tituloCampo" id="lblTotal">
+            -
+        </div></h3>
+        
+        <h3>Promedio:<div class="tituloCampo" id="lblPromedio">
+            -
+        </div></h3>
+        
+        <div class="areaResultado">
+            <div class="resultado">
+                <div id="divTabla">
+
+                </div>
+            </div>
+           
+        </div>
+    </div>
+    <div class="Final">
+        <h3> Juan Yanangomez</h3>
+    </div>
+</body>
+</html>
