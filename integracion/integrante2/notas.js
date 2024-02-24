@@ -64,18 +64,28 @@ guardar = function () {
     let nota3 = recuperarFloat("txtNota3");
     let total = calcularTotal(nota1, nota2, nota3);
     let promedio = calcularPromedio(nota1, nota2, nota3)
-    let estudiante = {};
-    estudiante.nombre = nombre;
-    estudiante.apellido = apellido;
-    estudiante.nota1 = nota1;
-    estudiante.nota2 = nota2;
-    estudiante.nota3 = nota3;
-    estudiante.total = total;
-    estudiante.promedio = promedio;
-    estudiantes.push(estudiante)
-    alert("Notas guardadas con exito");
-    limpiarCampos()
-    cargarTabla()
+
+    let nota1Valida= validarNota(nota1,"txtErrorN1")
+    let nota2Valida= validarNota(nota2,"txtErrorN2")
+    let nota3Valida= validarNota(nota3,"txtErrorN3")
+
+    if(nota1Valida&&nota2Valida&&nota3Valida){
+        let estudiante = {};
+        estudiante.nombre = nombre;
+        estudiante.apellido = apellido;
+        estudiante.nota1 = nota1;
+        estudiante.nota2 = nota2;
+        estudiante.nota3 = nota3;
+        estudiante.total = total;
+        estudiante.promedio = promedio;
+        estudiantes.push(estudiante)
+        alert("Notas guardadas con exito");
+        limpiarCampos()
+        cargarTabla()
+    }else{
+        alert("No se pudo guardar al estudiante ")
+    }
+ 
 }
 
 cargarTabla = function () {
@@ -110,4 +120,14 @@ limpiarCampos = function () {
     mostrarTextoEnCaja("txtNota3", "");
     mostrarTexto("lblTotal", "");
     mostrarTexto("lblPromedio", "");
+}
+validarNota=function(nota,idComponete){
+    if(nota<0||nota>10 || isNaN(nota)){
+        mostrarTexto(idComponete,"Error nota invalida debe ser entre 0 y 10")
+        return false;
+      
+    }else{
+        mostrarTexto(idComponete,"")
+       return true
+    }
 }
