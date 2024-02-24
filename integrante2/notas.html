@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<head>
+<link rel="stylesheet" href="notas.css">
+<script src="notas.js"></script>
+<script src="../utilitarios.js"></script>
+    <title>Notas</title>
+</head>
+<body onload="cargarTabla()">
+
+    <div class="contenedor">
+
+        <div class="contenedorForm">
+            <img src="notas.png" width="150px" alt="">
+            <h2>Nombre</h2>
+            <input class="cajaTexto" id="txtNombre" type="text">
+            <h2>Apellido</h2>
+            <input class="cajaTexto" id="txtApellido" type="text">
+            <h2>Nota 1</h2>
+            <input class="cajaTexto" id="txtNota1" type="text">
+            <h2>Nota 2</h2>
+            <input class="cajaTexto" id="txtNota2" type="text">
+            <h2 >Nota 3</h2>
+            <input class="cajaTexto" id="txtNota3" type="text">
+            <h2 id="lblTotal"></h2>
+            <h2 id="lblPromedio"></h2>
+            <input class="btn" type="button" value="Calcular" onclick="calcular()" >
+            <input  id="btnGuardar" class="btn" type="button" value="Guardar" onclick="guardar()" >
+        </div>
+   
+   <div class="contenedorTabla">
+    <div id="tablaContenido">
+
+    </div>
+    <h3> Autor: Victor Martinez</h3>
+   </div>
+    </div>
+</body>
+</html>
