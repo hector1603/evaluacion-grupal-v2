@@ -49,9 +49,11 @@ guardar = function() {
     estudiante.total = total;
     estudiante.promedio = promedio;
 
-    estudiantes.push(estudiante);
-    alert("Notas guardadas con éxito.");
-    mostrarTabla();
+    if(validarNombre(valorNombre)){
+        estudiantes.push(estudiante);
+        alert("Notas guardadas con éxito.");
+        mostrarTabla();
+    } 
 
     document.getElementById("txtNombre").value = '';
     document.getElementById("txtApellido").value = '';
@@ -80,4 +82,18 @@ mostrarTabla = function() {
     tablaEstudiantes += "</table>";
     cmpEstudiantes.innerHTML = tablaEstudiantes;
     deshabilitarComponente("btnGuardar");
+}
+
+
+validarNombre = function(nombre) {
+    let validado = true;
+    if(nombre == "") {
+        validado = false
+        mostrarTexto("errorNombre", "Campo obligatorio.");
+    }
+    if(nombre.length < 3 || nombre.length > 10) {
+        validado = false;
+        mostrarTexto("errorNombre", "El nombre debe tener de 3 a 10 caracteres.");
+    }
+    return validado;
 }
