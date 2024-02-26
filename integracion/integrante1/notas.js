@@ -14,7 +14,7 @@ calcularTotal = function(n1, n2, n3) {
 calcularPromedio = function(p1, p2, p3) {
     let promedio;
     promedio = (p1 + p2 + p3) / 3;
-    return promedio;
+    return promedio.toFixed(2);
 }
 
 calcular = function() {
@@ -66,17 +66,16 @@ guardar = function() {
 
 mostrarTabla = function() {
     let cmpEstudiantes = document.getElementById("tablaEstudiantes");
-    let tablaEstudiantes = "<table><tr><th>NOMBRE</th><th>APELLIDO</th><th>NOTA 1</th><th>NOTA 2</th><th>NOTA 3</th><th>TOTAL</th><th>PROMEDIO</th></tr>";
+    let tablaEstudiantes = "<table><tr><th>NOMBRE</th><th>NOTA 1</th><th>NOTA 2</th><th>NOTA 3</th><th>TOTAL</th><th>PROMEDIO</th></tr>";
 
     for(let i = 0; i < estudiantes.length; i++) {
         let estudiante = estudiantes[i];
-        tablaEstudiantes += "<tr><td>" + estudiante.nombre + "</td>"
-                        +"<td>" + estudiante.apellido + "</td>"
-                        +"<td>" + estudiante.nota1 + "</td>"
-                        +"<td>" + estudiante.nota2 + "</td>"
-                        +"<td>" + estudiante.nota3 + "</td>"
-                        +"<td>" + estudiante.total + "</td>"
-                        +"<td>" + estudiante.promedio + "</th></tr>";
+        tablaEstudiantes += "<tr><td>" + estudiante.nombre + " " + estudiante.apellido + "</td>"
+                        +"<td class='centered'>" + estudiante.nota1 + "</td>"
+                        +"<td class='centered'>" + estudiante.nota2 + "</td>"
+                        +"<td class='centered'>" + estudiante.nota3 + "</td>"
+                        +"<td class='centered'>" + estudiante.total + "</td>"
+                        +"<td class='centered'>" + estudiante.promedio + "</th></tr>";
     }
 
     tablaEstudiantes += "</table>";

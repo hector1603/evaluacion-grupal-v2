@@ -11,7 +11,7 @@
 <body onload="mostrarTabla();">
 
     <header>
-        <a href="../menu.html"class="btn">Menu</a>
+        <a href="../index.html"class="btn-nav">Menu</a>
     </header>
 
     <div class="main">
@@ -22,17 +22,17 @@
                 </div>
                 <div class="form-campos">
                     <form class="formulario">
-                        <input type="text" class="input" id="txtNombre" placeholder="Nombre"><br>
+                        <input type="text" class="input-first" id="txtNombre" placeholder="Nombre"><br>
                         <p id="errorNombre" class="errores"></p>
 
                         <input type="text" class="input" id="txtApellido" placeholder="Apellido"><br>
-                        <input type="text" class="input" id="txtNota1" placeholder="Nota 1"><br>
-                        <input type="text" class="input" id="txtNota2" placeholder="Nota 2"><br>
-                        <input type="text" class="input" id="txtNota3" placeholder="Nota 3"><br>
+                        <input type="text" class="input" id="txtNota1" placeholder="Primer parcial"><br>
+                        <input type="text" class="input" id="txtNota2" placeholder="Segundo parcial"><br>
+                        <input type="text" class="input" id="txtNota3" placeholder="Tercer parcial"><br>
 
                         <div class="botonoes">
-                            <input type="button" class="btn" id="btnGuardar" value="Guardar" onclick="guardar();">
                             <input type="button" class="btn" value="Calcular" onclick="calcular();">
+                            <input type="button" class="btn" id="btnGuardar" value="Guardar" onclick="guardar();">
                         </div>
                     </form>
                 </div>
@@ -42,15 +42,23 @@
                 <div id="tablaEstudiantes" class="tabla-estudiantes">
     
                 </div>
-                <div>
-                    <span id="lblNotas"></span>
-                    <span id="lblPromedio"></span>
+                <div id="info" class="info">
+                    <div class="caja">
+                        <p>Total:</p>
+                        <span id="lblNotas" class="nota-total dato"></span>
+                    </div>
+                    <div class="caja">
+                        <p>Promedio:</p>
+                        <span id="lblPromedio" class="promedio dato"></span>
+                    </div>
                 </div>
             </section>
         </div>
     </div>
 
-    <p class="autor">Autor - Hector Ajumado 2024</p>
+    <div class="footer">
+        <p class="autor">Autor - Hector Ajumado 2024</p>
+    </div>
 
     <script src="notas.js"></script>
     <script src="../utilitarios.js"></script>
